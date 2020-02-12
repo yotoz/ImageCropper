@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ImageCropper/static/css/main.2f36f618.chunk.css",
-    "main.js": "/ImageCropper/static/js/main.c1029302.chunk.js",
-    "main.js.map": "/ImageCropper/static/js/main.c1029302.chunk.js.map",
+    "main.js": "/ImageCropper/static/js/main.4be5399e.chunk.js",
+    "main.js.map": "/ImageCropper/static/js/main.4be5399e.chunk.js.map",
     "runtime-main.js": "/ImageCropper/static/js/runtime-main.aeea8dc8.js",
     "runtime-main.js.map": "/ImageCropper/static/js/runtime-main.aeea8dc8.js.map",
     "static/css/2.ee8f07d3.chunk.css": "/ImageCropper/static/css/2.ee8f07d3.chunk.css",
     "static/js/2.bef3363c.chunk.js": "/ImageCropper/static/js/2.bef3363c.chunk.js",
     "static/js/2.bef3363c.chunk.js.map": "/ImageCropper/static/js/2.bef3363c.chunk.js.map",
     "index.html": "/ImageCropper/index.html",
-    "precache-manifest.06547406eeada55e84a998f957e383ce.js": "/ImageCropper/precache-manifest.06547406eeada55e84a998f957e383ce.js",
+    "precache-manifest.a9d0a35d84ee8dfe4ee325af0d0d9872.js": "/ImageCropper/precache-manifest.a9d0a35d84ee8dfe4ee325af0d0d9872.js",
     "service-worker.js": "/ImageCropper/service-worker.js",
     "static/css/2.ee8f07d3.chunk.css.map": "/ImageCropper/static/css/2.ee8f07d3.chunk.css.map",
     "static/css/main.2f36f618.chunk.css.map": "/ImageCropper/static/css/main.2f36f618.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.ee8f07d3.chunk.css",
     "static/js/2.bef3363c.chunk.js",
     "static/css/main.2f36f618.chunk.css",
-    "static/js/main.c1029302.chunk.js"
+    "static/js/main.4be5399e.chunk.js"
   ]
 }
