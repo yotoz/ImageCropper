@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/yotoz/ImageCropper/static/css/main.100c8ad1.chunk.css",
-    "main.js": "/yotoz/ImageCropper/static/js/main.c1f29282.chunk.js",
-    "main.js.map": "/yotoz/ImageCropper/static/js/main.c1f29282.chunk.js.map",
-    "runtime-main.js": "/yotoz/ImageCropper/static/js/runtime-main.3af437ac.js",
-    "runtime-main.js.map": "/yotoz/ImageCropper/static/js/runtime-main.3af437ac.js.map",
-    "static/css/2.ee8f07d3.chunk.css": "/yotoz/ImageCropper/static/css/2.ee8f07d3.chunk.css",
-    "static/js/2.bef3363c.chunk.js": "/yotoz/ImageCropper/static/js/2.bef3363c.chunk.js",
-    "static/js/2.bef3363c.chunk.js.map": "/yotoz/ImageCropper/static/js/2.bef3363c.chunk.js.map",
-    "index.html": "/yotoz/ImageCropper/index.html",
-    "precache-manifest.c0a8a57eaa7a1555dccb4eeacf2f3ba8.js": "/yotoz/ImageCropper/precache-manifest.c0a8a57eaa7a1555dccb4eeacf2f3ba8.js",
-    "service-worker.js": "/yotoz/ImageCropper/service-worker.js",
-    "static/css/2.ee8f07d3.chunk.css.map": "/yotoz/ImageCropper/static/css/2.ee8f07d3.chunk.css.map",
-    "static/css/main.100c8ad1.chunk.css.map": "/yotoz/ImageCropper/static/css/main.100c8ad1.chunk.css.map",
-    "static/js/2.bef3363c.chunk.js.LICENSE.txt": "/yotoz/ImageCropper/static/js/2.bef3363c.chunk.js.LICENSE.txt"
+    "main.css": "/ImageCropper/static/css/main.100c8ad1.chunk.css",
+    "main.js": "/ImageCropper/static/js/main.7071d2ed.chunk.js",
+    "main.js.map": "/ImageCropper/static/js/main.7071d2ed.chunk.js.map",
+    "runtime-main.js": "/ImageCropper/static/js/runtime-main.aeea8dc8.js",
+    "runtime-main.js.map": "/ImageCropper/static/js/runtime-main.aeea8dc8.js.map",
+    "static/css/2.ee8f07d3.chunk.css": "/ImageCropper/static/css/2.ee8f07d3.chunk.css",
+    "static/js/2.bef3363c.chunk.js": "/ImageCropper/static/js/2.bef3363c.chunk.js",
+    "static/js/2.bef3363c.chunk.js.map": "/ImageCropper/static/js/2.bef3363c.chunk.js.map",
+    "index.html": "/ImageCropper/index.html",
+    "precache-manifest.a6aa26e0510512f13d88915d6501f8e2.js": "/ImageCropper/precache-manifest.a6aa26e0510512f13d88915d6501f8e2.js",
+    "service-worker.js": "/ImageCropper/service-worker.js",
+    "static/css/2.ee8f07d3.chunk.css.map": "/ImageCropper/static/css/2.ee8f07d3.chunk.css.map",
+    "static/css/main.100c8ad1.chunk.css.map": "/ImageCropper/static/css/main.100c8ad1.chunk.css.map",
+    "static/js/2.bef3363c.chunk.js.LICENSE.txt": "/ImageCropper/static/js/2.bef3363c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3af437ac.js",
+    "static/js/runtime-main.aeea8dc8.js",
     "static/css/2.ee8f07d3.chunk.css",
     "static/js/2.bef3363c.chunk.js",
     "static/css/main.100c8ad1.chunk.css",
-    "static/js/main.c1f29282.chunk.js"
+    "static/js/main.7071d2ed.chunk.js"
   ]
 }
