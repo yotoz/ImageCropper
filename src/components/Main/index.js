@@ -108,7 +108,7 @@ const Main = () => {
     const { x, y } = colorBlockPos;
 
     colorBlockRef.current.style.left = `${x + 20}px`;
-    colorBlockRef.current.style.top = `${y - 60}px`;
+    colorBlockRef.current.style.top = `${y}px`;
   }, [colorBlockPos]);
 
   useEffect(() => {
@@ -119,7 +119,9 @@ const Main = () => {
 
   return (
     <Container className="main-container">
-      <div className="title animated fadeOutLeft">I M A G E</div>
+      <div className="title animated fadeOutLeft text-center">
+        I M A G E <br /> C R O P P E R
+      </div>
       <Row className="input-form">
         <Col>
           <Input

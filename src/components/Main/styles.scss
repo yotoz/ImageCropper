@@ -12,6 +12,8 @@ body::-webkit-scrollbar {
   min-width: 100vw;
   padding-top: 10px;
 
+  margin-bottom: 150px;
+
   .input-form {
     width: 70vw;
 
@@ -51,6 +53,7 @@ body::-webkit-scrollbar {
     min-width: 200px;
     min-height: 200px;
     border-radius: 5px;
+    visibility: hidden;
 
     .card {
       margin-top: 50px;
