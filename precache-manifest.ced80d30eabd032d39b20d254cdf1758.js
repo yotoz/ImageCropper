@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79cec7dfb37394ad02ffeb280c697877",
+    "revision": "2cf2b9cffea492449a12e47a622d6df7",
     "url": "/ImageCropper/index.html"
   },
   {
