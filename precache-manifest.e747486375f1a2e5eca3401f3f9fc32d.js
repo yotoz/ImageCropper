@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5271ba311989e1ff9f644c6451c7af26",
+    "revision": "2bcbdae59f5b9a6c1d49d48030d18f5f",
     "url": "/ImageCropper/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ImageCropper/static/css/2.ee8f07d3.chunk.css"
   },
   {
-    "revision": "aa6dc56e27e791b5bf8b",
-    "url": "/ImageCropper/static/css/main.100c8ad1.chunk.css"
+    "revision": "a6b27a0a7af22dc82453",
+    "url": "/ImageCropper/static/css/main.37a6456d.chunk.css"
   },
   {
     "revision": "af7a3868cb5eedee5684",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ImageCropper/static/js/2.bef3363c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aa6dc56e27e791b5bf8b",
-    "url": "/ImageCropper/static/js/main.7071d2ed.chunk.js"
+    "revision": "a6b27a0a7af22dc82453",
+    "url": "/ImageCropper/static/js/main.6640afdf.chunk.js"
   },
   {
     "revision": "3e235ef9e01baaf6df29",
