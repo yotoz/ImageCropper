@@ -60,6 +60,8 @@ const Main = () => {
     //console.log(innerWidth + ", " + innerHeight);
   };
 
+  const onChangeText = e => {};
+
   const handleMouseCanvas = e => {
     try {
       // 캔버스 컨텍스트가 없다면 실행 종료
@@ -163,6 +165,7 @@ const Main = () => {
             type="text"
             className="rounded shadow"
             onClick={openFileDialog}
+            onChange={onChangeText}
           />
         </Col>
       </Row>
