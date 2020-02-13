@@ -18,6 +18,10 @@ body::-webkit-scrollbar {
     height: 15vh;
   }
 
+  .click-me {
+    width: 70vw;
+  }
+
   .input-form {
     width: 70vw;
 
@@ -35,9 +39,12 @@ body::-webkit-scrollbar {
     }
   }
 
+  .speech-bubble {
+    width: 7vw;
+  }
+
   .img-space {
-    visibility: hidden;
-    position: absolute;
+    display: none;
   }
 
   .canvas-form {
@@ -47,7 +54,7 @@ body::-webkit-scrollbar {
   .title {
     font-size: 4.15em;
     color: #a4b0be;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-family: "Kreon", serif;
 
     animation-duration: 1.75s;

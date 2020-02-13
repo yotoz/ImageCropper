@@ -62,6 +62,46 @@ const Main = () => {
 
   const onChangeText = e => {};
 
+  const onMouseClick = e => {
+    try {
+      // 캔버스 컨텍스트가 없다면 실행 종료
+      if (!ctx) {
+        return;
+      }
+
+      const { x, y } = getMousePosFromCanvas(canvasRef.current, e);
+
+      const wid =
+        imgRef.current.width > window.innerWidth * 0.7
+          ? window.innerWidth * 0.7
+          : imgRef.current.width;
+
+      const ratio = imgRef.current.width / wid;
+
+      if (!imgRef || x * ratio < 0 || y * ratio < 0) {
+        return;
+      }
+
+      const p = ctx.getImageData(x * ratio, y * ratio, 1, 1).data;
+
+      // p 값 체크
+      if (p == null || p.length < 4) {
+        throw new Error("Failed to fetch image data.");
+      }
+
+      //get fixel color end
+
+      //start image binary data
+      //end image binary data
+
+      //start check & crop image
+      //end check & crop image
+
+      //start save cropped image
+      //end save cropped image
+    } catch (ee) {}
+  };
+
   const handleMouseCanvas = e => {
     try {
       // 캔버스 컨텍스트가 없다면 실행 종료
@@ -158,6 +198,19 @@ const Main = () => {
       <div className="title animated fadeOutLeft text-center">
         I M A G E <br /> C R O P P E R
       </div>
+
+      {/* <Row className="click-me">
+          <Col sm="10" md="10" lg="10" xl="10" xs="10"></Col>
+          <Col sm="2" md="2" lg="2" xl="2" xs="2">
+            <img
+              id="clickMe"
+              className="speech-bubble animated bounce infinite"
+              src="./speechBubble.png"
+              alt=""
+            />
+          </Col>
+        </Row> */}
+
       <Row className="input-form">
         <Col>
           <Input
@@ -183,6 +236,7 @@ const Main = () => {
         width="0"
         height="0"
         className="canvas-form"
+        onMouseUp={onMouseClick}
         onMouseMove={handleMouseCanvas}
         onMouseOver={() => {
           if (colorBlockHidden) {
