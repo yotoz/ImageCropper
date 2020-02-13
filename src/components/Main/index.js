@@ -61,52 +61,49 @@ const Main = () => {
   };
 
   const handleMouseCanvas = e => {
-    if (!ctx) {
-      return;
-    }
-
-    const { x, y } = getMousePosFromCanvas(canvasRef.current, e);
-
-    const wid =
-      imgRef.current.width > window.innerWidth * 0.7
-        ? window.innerWidth * 0.7
-        : imgRef.current.width;
-
-    const ratio = imgRef.current.width / wid;
-
-    //console.log(window.innerWidth * 0.7);
-    //console.log(canvasRef.current.width);
-    //console.log("x : " + x * ratio + ", y : " + y * ratio);
-
-    //console.log(x + " / " + wid + " * " + imgRef.current.width);
-    //console.log((x / wid) * imgRef.current.width);
-
-    if (!imgRef || x * ratio < 0 || y * ratio < 0) {
-      return;
-    }
-
-    let p;
     try {
-      p = ctx.getImageData(x * ratio, y * ratio, 1, 1).data;
-    } catch (ee) {
-      p = { 0: Number, 0: Number, 0: Number, 0: Number };
-    }
-
-    try {
-      if (p[3] === 0) {
-        setColorBlockHidden(true);
-      } else {
-        setColorBlockHidden(false);
+      // 캔버스 컨텍스트가 없다면 실행 종료
+      if (!ctx) {
+        return;
       }
+
+      const { x, y } = getMousePosFromCanvas(canvasRef.current, e);
+
+      const wid =
+        imgRef.current.width > window.innerWidth * 0.7
+          ? window.innerWidth * 0.7
+          : imgRef.current.width;
+
+      const ratio = imgRef.current.width / wid;
+
+      //console.log(window.innerWidth * 0.7);
+      //console.log(canvasRef.current.width);
+      //console.log("x : " + x * ratio + ", y : " + y * ratio);
+
+      //console.log(x + " / " + wid + " * " + imgRef.current.width);
+      //console.log((x / wid) * imgRef.current.width);
+
+      if (!imgRef || x * ratio < 0 || y * ratio < 0) {
+        return;
+      }
+
+      const p = ctx.getImageData(x * ratio, y * ratio, 1, 1).data;
+
+      // p 값 체크
+      if (p == null || p.length < 4) {
+        throw new Error("Failed to fetch image data.");
+      }
+
+      // 히든 값 위치 값 변경
+      setColorBlockHidden(p[3] === 0);
+      setColorBlockPos({ x: e.pageX, y: e.pageY });
+
+      // 헥스값 변경
+      setHex("#" + rgbToHex([p[0], p[1], p[2]]));
+      setR(p[0]);
+      setG(p[1]);
+      setB(p[2]);
     } catch (e) {}
-
-    //console.log(e);
-
-    setColorBlockPos({ x: e.pageX, y: e.pageY });
-    setHex("#" + rgbToHex([p[0], p[1], p[2]]));
-    setR(p[0]);
-    setG(p[1]);
-    setB(p[2]);
   };
 
   const openFileDialog = () => {
