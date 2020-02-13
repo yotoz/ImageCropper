@@ -4,15 +4,12 @@ import {
   Container,
   Button,
   Card,
-  CardImg,
   CardText,
   CardBody,
-  CardTitle,
   CardSubtitle,
   Row,
   Col,
-  Input,
-  Label
+  Input
 } from "reactstrap";
 
 const rgbToHex = function(rgbArr) {
@@ -46,13 +43,21 @@ const Main = () => {
   const [fileSelector, setFileSelector] = useState(null);
   const [colorBlockHidden, setColorBlockHidden] = useState(true);
   const [colorBlockPos, setColorBlockPos] = useState({ x: 0, y: 0 });
+  const [fileBoxText, setFileBoxText] = useState("");
 
   const imageToCanvas = () => {
+    if (!imgRef) {
+      return;
+    }
+
     canvasRef.current.width = imgRef.current.width;
     canvasRef.current.height = imgRef.current.height;
 
     const ctx = canvasRef.current.getContext("2d");
+
     ctx.drawImage(imgRef.current, 0, 0);
+
+    //console.log(innerWidth + ", " + innerHeight);
   };
 
   const handleMouseCanvas = e => {
@@ -61,17 +66,43 @@ const Main = () => {
     }
 
     const { x, y } = getMousePosFromCanvas(canvasRef.current, e);
-    const p = ctx.getImageData(x, y, 1, 1).data;
+
+    const wid =
+      imgRef.current.width > window.innerWidth * 0.7
+        ? window.innerWidth * 0.7
+        : imgRef.current.width;
+
+    const ratio = imgRef.current.width / wid;
+
+    //console.log(window.innerWidth * 0.7);
+    //console.log(canvasRef.current.width);
+    //console.log("x : " + x * ratio + ", y : " + y * ratio);
+
+    //console.log(x + " / " + wid + " * " + imgRef.current.width);
+    //console.log((x / wid) * imgRef.current.width);
+
+    if (!imgRef || x * ratio < 0 || y * ratio < 0) {
+      return;
+    }
+
+    let p;
+    try {
+      p = ctx.getImageData(x * ratio, y * ratio, 1, 1).data;
+    } catch (ee) {
+      p = { 0: Number, 0: Number, 0: Number, 0: Number };
+    }
 
     try {
-      if (p[3] == 0) {
+      if (p[3] === 0) {
         setColorBlockHidden(true);
       } else {
         setColorBlockHidden(false);
       }
     } catch (e) {}
 
-    setColorBlockPos({ x: e.clientX, y: e.clientY });
+    //console.log(e);
+
+    setColorBlockPos({ x: e.pageX, y: e.pageY });
     setHex("#" + rgbToHex([p[0], p[1], p[2]]));
     setR(p[0]);
     setG(p[1]);
@@ -82,7 +113,7 @@ const Main = () => {
     //console.log(fileSelector);
     fileSelector.click();
 
-    console.log(fileSelector.re);
+    //console.log(fileSelector.re);
   };
 
   useEffect(() => {
@@ -90,10 +121,15 @@ const Main = () => {
     const fileSelector = document.createElement("input");
     fileSelector.type = "file";
     fileSelector.onchange = e => {
-      console.log(URL.createObjectURL(e.target.files[0]));
-      setFile(URL.createObjectURL(e.target.files[0]));
+      //console.log(URL.createObjectURL(e.target.files[0]));
+      if (e.target.files.length <= 0) {
+        setFileBoxText("");
+        return;
+      }
 
+      setFile(URL.createObjectURL(e.target.files[0]));
       //URL.create;
+      setFileBoxText(URL.createObjectURL(e.target.files[0]));
     };
 
     setFileSelector(fileSelector);
@@ -108,7 +144,7 @@ const Main = () => {
     const { x, y } = colorBlockPos;
 
     colorBlockRef.current.style.left = `${x + 20}px`;
-    colorBlockRef.current.style.top = `${y}px`;
+    colorBlockRef.current.style.top = `${y - 50}px`;
   }, [colorBlockPos]);
 
   useEffect(() => {
@@ -119,20 +155,21 @@ const Main = () => {
 
   return (
     <Container className="main-container">
+      <div className="head-space"></div>
       <div className="title animated fadeOutLeft text-center">
         I M A G E <br /> C R O P P E R
       </div>
       <Row className="input-form">
         <Col>
           <Input
+            value={fileBoxText}
             type="text"
             className="rounded shadow"
             onClick={openFileDialog}
           />
         </Col>
       </Row>
-      <hr />
-      <img ref={imgRef} src={file} />
+      <img className="img-space" ref={imgRef} src={file} />
       <br />
       <Button
         color="white"
@@ -143,6 +180,9 @@ const Main = () => {
       </Button>
       <br />
       <canvas
+        width="0"
+        height="0"
+        className="canvas-form"
         onMouseMove={handleMouseCanvas}
         onMouseOver={() => {
           if (colorBlockHidden) {
